@@ -1,0 +1,19 @@
+<button (click)="onClick()">Display Details</button>
+<p *ngIf="isQuestion else answerTemplate">
+{{statementOne}} 
+</p>
+
+<ng-template #answerTemplate>
+<p>{{statementTwo}}
+</p>
+</ng-template>
+
+<h2> Logs </h2>
+<br>
+<div *ngFor="let logRow of clickLog; let i=index" >
+	<div *ngIf="i>3" >
+		<div [ngStyle]="{backgroundColor : (i % 2 === 0)? 'Blue' : 'white' }">
+			<p [ngClass]="{odd: i%2 ===0}">{{logRow}}
+		</div>
+	</div> 
+ </div>

@@ -1,0 +1,16 @@
+
+
+{{Text}}
+<div class="warning" [hidden]="!visibility" >
+{{Message}}
+</div>
+
+<br>
+<input type="text" class="form-control" (input)="onUpdateServerName($event)"> <button class="btn-primary" (click)="onServerCreation()" > Add Server</button>
+{{serverStatus}}
+<br>
+<p *ngIf="serverCreated else noserermsg"> {{serverName}} </p>
+
+<ng-template #noserermsg>
+No Server available
+</ng-template>>
